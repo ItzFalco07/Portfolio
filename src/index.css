@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#hero {
+	background-image: url('./assets/herobg.png') !important;
+	background-size:cover !important;
+	overflow: visible !important; 
+	z-index: 100 !important;
+}
+
+* {
+		font-family: "Poppins", sans-serif;
+}
+
+#hi {
+    overflow: visible !important; 
+}
+
+
+.move {
+	transition: all 1s ease;
+	transform: translateY(-100%);
+	opacity: 0;
+}
+
+.Link:after {
+	content: '' !important;
+	position: absolute !important;
+	background-color: #925eff   !important;
+	height: 3px !important;
+	width: 0 !important;
+	left: 0;
+	bottom: -7px;
+	transition: 0.3s !important;
+}
+
+.Link:hover:after {
+	width: 100% !important;
+}
+
+.btn {
+    background: linear-gradient(to right, #925eff, #310f73);
+    transition: 0.4s;
+      background-size: 130% 100%;
+      background-position: 100% 0;
+
+}
+
+.btn:hover {
+  background-position: 0 0;
+    box-shadow: 0 0 30px #5c38a6 !important;
+}
+
+.stripe {
+    background: linear-gradient(to bottom, #925eff, #050816);
+}
+
+.heroH{
+	font-weight: 900;
+	word-spacing: 1px;
+	font-size: 3.3em;
+}
+
+#special {
+	color: #925eff
+}
+
+/* laptops (1024px) */
+@media (max-width: 1024px) {
+	nav {
+		font-size: 0.9em;
+		padding-left: 5em !important;
+		padding-right: 5em !important;
+	}
+	.text-stuff {
+		padding: 0 !important;
+	}
+}
