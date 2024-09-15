@@ -18,9 +18,9 @@ const DesktopCanvas = ({setLoading}) => {
   useEffect(()=> {
      const media = window.matchMedia('(min-width: 600px) and (max-width: 768px)');
      const media2 = window.matchMedia('(min-width: 300px) and (max-width: 600px)');
-       if(media.matches == '(min-width: 600px) and (max-width: 768px)') {
+       if(media.matches) {
         setCameraPosition([27, 3,5]);
-       } else if(media2.matches == '(min-width: 300px) and (max-width: 600px)') {
+       } else if(media2.matches) {
         setCameraPosition([34, 3,5]);
        }
      
