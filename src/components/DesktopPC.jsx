@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react'
 
 const DesktopPC = ({dataFunction}) => {
   const [Loading, setLoading] = useState(true);
-  const { scene } = useGLTF('../../public/desktop_pc/scene.gltf');
+  const { scene } = useGLTF('../../desktop_pc/scene.gltf');
     
   useEffect(()=> {
     if(scene) {
