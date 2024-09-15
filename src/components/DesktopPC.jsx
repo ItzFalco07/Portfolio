@@ -28,7 +28,7 @@ const DesktopPC = ({dataFunction}) => {
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={10} position={[0,3,0]} />
+      <pointLight intensity={10} position={[0,2,0]} />
       <primitive object={scene}  position={[0, -2, -2]} rotation={[-0.01, -0.2, -0.2]} />
     </mesh>
     </>
