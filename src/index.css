@@ -10,6 +10,11 @@
 	overflow: visible !important; 
 	z-index: 100 !important;
 }
+.menu-icon {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out; /* Smooth transition for opacity */
+}
+
 
 * {
 		font-family: "Poppins", sans-serif;
@@ -25,6 +30,12 @@
 	transform: translateY(-100%);
 	opacity: 0;
 }
+
+.item-container {
+	transition: 0.4s;
+}
+
+
 
 .Link:after {
 	content: '' !important;
@@ -113,7 +124,7 @@
 	nav .links-con {
 		display: none !important;
 	}
-	.menu {
+	.menu-icon {
 		display: block !important;
 	}
 }
