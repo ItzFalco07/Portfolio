@@ -10,6 +10,9 @@
 	overflow: visible !important; 
 	z-index: 100 !important;
 }
+body, #root {
+	overflow-x:  hidden !important;
+}
 .menu-icon {
   opacity: 1;
   transition: opacity 0.2s ease-in-out; /* Smooth transition for opacity */
@@ -116,6 +119,11 @@
 
 /* Hamburger */
 @media (max-width: 660px) {
+
+	.social {
+		font-size:  20px;
+		color: #D5D5D5;
+	}
 	.text-stuff {
 		padding: 0 6em !important;
 		font-size: 0.7em !important;

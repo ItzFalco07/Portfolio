@@ -43,7 +43,7 @@ const Home = () => {
         <div className="item-container absolute w-[70%] h-screen bg-[#0d102b] z-[20] right-[-100%] flex flex-col items-center justify-center gap-[1em] text-xl" ref={items}>
           <a href="">Skills</a>
           <a href="">Projects</a>
-          <a href="">Hire Me</a>
+          <a href="https://www.upwork.com/freelancers/~0184cf5697571fafe6">Hire Me</a>
         </div>
         <div className="w-full h-[50vh] nav">
           <nav className="w-full h-[70px] px-[14em] flex justify-between items-center">
@@ -53,7 +53,7 @@ const Home = () => {
                 <Link className="Link relative font-medium tracking-widest hover:text-[#925eff]">Skills</Link>
                 <Link className="Link relative font-medium tracking-widest hover:text-[#925eff]">Projects</Link>
               </div>
-              <button className="z-[21] btn font-medium ml-[2em] w-[8em] rounded-[6px] px-[20px] py-[8px] break-keep font-bold">Hire Me</button>
+              <button href="https://www.upwork.com/freelancers/~0184cf5697571fafe6" className="z-[21] btn font-medium ml-[2em] w-[8em] rounded-[6px] px-[20px] py-[8px] break-keep font-bold">Hire Me</button>
             </div>
             <img
               src={Switch ? close : menu}
@@ -73,6 +73,11 @@ const Home = () => {
               <p className="text-xl font-medium para">
                 Fullstack Web Developer <br /> and Designer
               </p>
+              <div className="contacts flex  mt-[2em] gap-[1.2em]" >
+                <a href="https://github.com/ItzFalco07" className="social fa-brands fa-github fa-xl"></a>
+                <a href="https://www.upwork.com/freelancers/~0184cf5697571fafe6" className="social fa-brands fa-upwork fa-xl"></a>
+                <a href="https://t.me/+nygHO4lU-hIyNWRl" className="social fa-solid fa-paper-plane fa-lg"></a>
+              </div>
             </div>
           </div>
         </div>
