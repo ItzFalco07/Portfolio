@@ -55,7 +55,7 @@
 }
 
 .stripe {
-    background: linear-gradient(to bottom, #925eff, #050816);
+    background: linear-gradient(to bottom, #925eff, rgba(0, 0, 0, 0));
 }
 
 .heroH{
@@ -76,6 +76,62 @@
 		padding-right: 5em !important;
 	}
 	.text-stuff {
-		padding: 0 !important;
+		padding: 0 10em !important;
+		font-size:  0.9em !important;
+		margin-top: 2em;
 	}
+}
+
+/* tablets */
+@media (max-width: 768px) {
+	.ball {
+		width: 17px;
+		height: 17px;
+	}
+	.stripe {
+		height: 50%;
+	}
+	nav {
+		font-size: 0.9em;
+		padding-left: 3em !important;
+		padding-right: 3em !important;
+	}
+	.text-stuff {
+		padding: 0 5em !important;
+		font-size:  0.8em !important;
+		margin-top: 4em;
+	}
+}
+
+/* Hamburger */
+@media (max-width: 660px) {
+	.text-stuff {
+		padding: 0 6em !important;
+		font-size: 0.7em !important;
+    margin-top: 5em;
+	}
+	nav .links-con {
+		display: none !important;
+	}
+	.menu {
+		display: block !important;
+	}
+}
+
+/* Mobile L */
+@media (max-width: 440px) {
+		.text-stuff {
+		  padding-left: 1em !important;
+		  padding-right: 1em !important;
+		}
+		.para {
+			font-size:  1.5em !important;
+		}
+		.logo {
+			width: 13em !important;
+		}
+		nav {
+			padding-left: 2em !important;
+			padding-right: 2em !important;
+		}
 }
