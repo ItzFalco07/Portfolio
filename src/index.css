@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.loader {
+	transition:  0.3s !important;
+}
+
 #hero {
 	background-image: url('./assets/herobg.png') !important;
 	background-size:cover !important;
@@ -98,6 +102,18 @@ body, #root {
 
 /* tablets */
 @media (max-width: 768px) {
+	.text {
+		font-size: 0.8em !important;
+	}
+	.big-p{
+		width: 400px;
+	}
+	.main-t {
+		font-size: 3.3em !important;
+	}
+	.skills {
+		font-size: 0.9em;
+	}
 	.ball {
 		width: 17px;
 		height: 17px;
@@ -117,12 +133,29 @@ body, #root {
 	}
 }
 
+.social {
+			color: #D5D5D5;
+}
+
+.social:hover {
+			color: #fff;
+}
+
 /* Hamburger */
 @media (max-width: 660px) {
-
+.container-skills {
+	padding:  6em 3em !important;
+}
+.skills {
+	scale: 0.9;
+	position: relative !important;
+	left: -1em !important;
+}
+.percent{
+	width: 100%;
+}
 	.social {
 		font-size:  20px;
-		color: #D5D5D5;
 	}
 	.text-stuff {
 		padding: 0 6em !important;
@@ -139,6 +172,15 @@ body, #root {
 
 /* Mobile L */
 @media (max-width: 440px) {
+	  .skills .display-skills {
+	  	width: 110% !important;
+	  }
+	  .container-skills {
+	padding:  6em 2.4em !important;
+	  }
+	  .big-p {
+	  	width: 96%;
+	  }
 		.text-stuff {
 		  padding-left: 1em !important;
 		  padding-right: 1em !important;
@@ -153,4 +195,21 @@ body, #root {
 			padding-left: 2em !important;
 			padding-right: 2em !important;
 		}
+		 .selector {
+ 	width: 110% !important;
+ }
+}
+
+/* mobile - M */
+
+@media (max-width: 375px) {
+	.skills {
+		scale: 0.86;
+	}
+			 .selector {
+ 	width: 110% !important;
+ } 
+ 	  .skills .display-skills {
+	  	width: 110% !important;
+	  }
 }
