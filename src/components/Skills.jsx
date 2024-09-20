@@ -18,7 +18,7 @@ import figma from '../assets/skills/figma.svg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Skills = () => {
+const Skills = ({skillsRef}) => {
   const [current, setCurrent] = useState('Frontend');
   const [skills, setSkills] = useState([]);
   const skillRefs = useRef([]);
@@ -73,7 +73,7 @@ const Skills = () => {
   }, [skills]);
 
   return (
-    <div className="container-skills w-full min-h-screen z-[1] relative bg-[#050816] p-[6em] pt-[10em] text-white">
+    <div ref={skillsRef} className="container-skills w-full min-h-screen z-[1] relative bg-[#050816] p-[6em] pt-[10em] pb-[3em] text-white">
       <div className="text">
         <h3 className="opacity-[0.6]">INTRODUCTION</h3>
         <h1 className="main-t text-6xl font-black">Overview</h1>
@@ -83,7 +83,7 @@ const Skills = () => {
       </div>
 
       <div className="skills mt-[5em]">
-        <h1 className="text-[#925EFF] w-[fit-content] font-semibold text-4xl hover:underline cursor-pointer">
+        <h1 id="skills" className="text-[#925EFF] w-[fit-content] font-semibold text-4xl hover:underline cursor-pointer">
           <span className="text-[#6940C1]">#</span> Skills
         </h1>
         <div className="selector flex gap-[1em] mt-[2em]">

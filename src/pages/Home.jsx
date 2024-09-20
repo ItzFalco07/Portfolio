@@ -1,11 +1,13 @@
-import React from 'react';
-import DesktopCanvas from '../components/DesktopCanvas';
-import Skills from '../components/Skills';
 import { useState, useRef } from 'react';
 import Logo from '../assets/Logo.svg';
 import { Link } from 'react-router-dom';
 import menu from '../assets/menu.svg';
 import close from '../assets/close.svg';
+import DesktopCanvas from '../components/DesktopCanvas';
+import Skills from '../components/Skills';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 const Home = () => {
   const [Loading, setLoading] = useState(true);
@@ -13,6 +15,8 @@ const Home = () => {
   const [ToggleMenu, setToggleMenu] = useState(false);
   const menuRef = useRef(null);
   const items = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
 
   const handleMenu = () => {
     if(ToggleMenu) {
@@ -37,12 +41,28 @@ const Home = () => {
     }, 300); // This should match your CSS transition duration
   };
 
+  const scrollToSkills = () => {
+    console.log("Scrolling to Skills...");
+    setSwitch(false);
+    setToggleMenu(false)
+    items.current.style.right = '-100%';
+    skillsRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToProjects = () => {
+    console.log("Scrolling to Projects...");
+    setSwitch(false);
+    setToggleMenu(false)
+    items.current.style.right = '-100%';
+    projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <div id="hero" className="w-full h-screen text-white relative z-[10]">
         <div className="item-container absolute w-[70%] h-screen bg-[#0d102b] z-[20] right-[-100%] flex flex-col items-center justify-center gap-[1em] text-xl" ref={items}>
-          <a href="">Skills</a>
-          <a href="">Projects</a>
+          <a onClick={scrollToSkills} className="cursor-pointer">Skills</a>
+          <a onClick={scrollToProjects} className="cursor-pointer">Projects</a>
           <a href="https://www.upwork.com/freelancers/~0184cf5697571fafe6">Hire Me</a>
         </div>
         <div className="w-full h-[50vh] nav">
@@ -50,8 +70,8 @@ const Home = () => {
             <img src={Logo} className="logo w-[15em]" alt="Logo"></img>
             <div className="links-con flex items-center">
               <div className="links text mx-[2em] h-full gap-[2em] z-[21] w-[34%] flex justify-between items-center">
-                <Link className="Link relative font-medium tracking-widest hover:text-[#925eff]">Skills</Link>
-                <Link className="Link relative font-medium tracking-widest hover:text-[#925eff]">Projects</Link>
+                <Link onClick={scrollToSkills} className="Link relative font-medium tracking-widest hover:text-[#925eff]">Skills</Link>
+                <Link onClick={scrollToProjects} className="Link relative font-medium tracking-widest hover:text-[#925eff]">Projects</Link>
               </div>
               <button href="https://www.upwork.com/freelancers/~0184cf5697571fafe6" className="z-[21] btn font-medium ml-[2em] w-[8em] rounded-[6px] px-[20px] py-[8px] break-keep font-bold">Hire Me</button>
             </div>
@@ -86,7 +106,10 @@ const Home = () => {
           <DesktopCanvas setLoading={setLoading} />
         </div>
       </div>
-      <Skills />
+      <Skills skillsRef={skillsRef} />
+      <Projects projectsRef={projectsRef} />
+      <Contact/>
+      <Footer/>
     </>
   );
 };
