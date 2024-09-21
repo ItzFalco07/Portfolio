@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import { Github, Linkedin, Mail, Send } from 'lucide-react';
 
 const ParticleBackground = () => {
   const canvasRef = useRef(null);
@@ -74,38 +74,51 @@ const Button = ({ children, ...props }) => (
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const footerRef = useRef(null);
+  const isInView = useInView(footerRef, { once: true, amount: 0.3 });
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/codewithfalco' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/codewithfalco' },
-    { icon: Twitter, href: 'https://twitter.com/codewithfalco' },
-    { icon: Mail, href: 'mailto:falco@example.com' },
+    { icon: Github, href: 'https://github.com/ItzFalco07' },
+    { icon: Linkedin, href: 'https://www.upwork.com/freelancers/~0184cf5697571fafe6' },
+    { icon: Send, href: 'https://t.me/+nygHO4lU-hIyNWRl' },
+    { icon: Mail, href: 'mailto:falcogaming2022@gmail.com' },
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5, staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   return (
     <motion.footer 
+      ref={footerRef}
       className="bg-[#0D0C18] text-white py-12 relative overflow-hidden"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      variants={containerVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
     >
       <ParticleBackground />
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div 
             className="mb-8 md:mb-0"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
+            variants={itemVariants}
           >
             <h2 className="text-3xl font-bold text-[#a78bfa]">CodeWithFalco</h2>
             <p className="text-sm text-gray-400 mt-2">Fullstack Web Developer and Designer</p>
           </motion.div>
           <motion.div 
             className="flex space-x-4"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
+            variants={itemVariants}
           >
             {socialLinks.map((link, index) => (
               <motion.a
@@ -125,9 +138,7 @@ export default function Footer() {
         </div>
         <motion.div 
           className="mt-8 text-center text-sm text-gray-400"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
+          variants={itemVariants}
         >
           <p>&copy; {currentYear} CodeWithFalco. All rights reserved.</p>
         </motion.div>

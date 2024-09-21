@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	background-color: #050816;
+}
+
 .loader {
 	transition:  0.3s !important;
 }
@@ -104,9 +108,9 @@ body, #root {
 /* tablets */
 @media (max-width: 768px) {
 		#contact {
-		display: flex;
-		flex-direction: column;
-		height: 160vh !important;
+		display: flex !important;
+		flex-direction: column !important;
+		height: 200vh !important;
 		position: relative !important;
   /* 		REVERS ITEMS INSIDE #CONTACT */
 	}
@@ -123,7 +127,7 @@ body, #root {
 		position: absolute !important;
 		top: 3em !important;
 		left:  50% !important;
-		transform: translate(-50%, 0);
+		transform: translate(-50%, 0) !important;
 		width: 70% !important;
 		height: 300px !important;
 	}
