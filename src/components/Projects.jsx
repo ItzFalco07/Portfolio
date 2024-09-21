@@ -5,6 +5,7 @@ const Projects = ({ projectsRef }) => {
   const [Projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [Search, setSearch] = useState("");
+  const [Loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getProjects = async () => {
@@ -12,6 +13,7 @@ const Projects = ({ projectsRef }) => {
         const res = await axios.get('https://portfolio-admin-api.vercel.app/api/get-project');
         setProjects(res.data);
         setFilteredProjects(res.data); // Initially show all projects
+        setLoading(false)
       } catch (err) {
         console.error(err);
       }
@@ -31,9 +33,19 @@ const Projects = ({ projectsRef }) => {
     }
   }, [Search, Projects]);
 
+  
+
   return (
     <>
-      <div ref={projectsRef} className="container-skills w-full min-h-screen bg-[#050816] px-[6em] py-[3em]">
+      <div ref={projectsRef} className="container-skills relative w-full min-h-screen bg-[#050816] px-[6em] py-[3em]">
+        {
+          Loading ? 
+          <div className="loader absolute left-0 top-0 w-full h-full z-[100] flex items-center justify-center">
+           <i className="absolute fa-solid fa-spinner fa-spin-pulse text-zinc-300 fa-2xl"></i>
+        </div>
+        : ''
+        }
+
         <h1 className="op text-[#925EFF] w-[fit-content] font-semibold text-4xl hover:underline cursor-pointer">
           <span className="text-[#6940C1]">#</span> Projects
         </h1>
