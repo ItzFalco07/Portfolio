@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Logo from '../assets/Logo.svg';
 import { Link } from 'react-router-dom';
 import menu from '../assets/menu.svg';
@@ -8,6 +8,7 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import Loader from '../components/Loader';
 
 const Home = () => {
   const [Loading, setLoading] = useState(true);
@@ -17,6 +18,7 @@ const Home = () => {
   const items = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
+  const loaderRef = useRef(null);
 
   const handleMenu = () => {
     if(ToggleMenu) {
@@ -40,7 +42,6 @@ const Home = () => {
       }
     }, 300); // This should match your CSS transition duration
   };
-
   const scrollToSkills = () => {
     console.log("Scrolling to Skills...");
     setSwitch(false);
@@ -48,7 +49,6 @@ const Home = () => {
     items.current.style.right = '-100%';
     skillsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
-
   const scrollToProjects = () => {
     console.log("Scrolling to Projects...");
     setSwitch(false);
@@ -56,10 +56,20 @@ const Home = () => {
     items.current.style.right = '-100%';
     projectsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
+  useEffect(()=> {
+    console.log(Loading)
+    if(loaderRef.current) {
+      if(!Loading) {
+        loaderRef.current.style.top = '-100%'
+        document.body.style.overflow = 'auto'
+      }
+    }
+  }, [Loading])
 
   return (
     <>
-      <div id="hero" className="w-full h-screen text-white relative z-[10]">
+      <Loader loaderRef={loaderRef} />
+      <div id="hero" className=" w-full h-screen text-white relative z-[10]">
         <div className="item-container absolute w-[70%] h-screen bg-[#0d102b] z-[20] right-[-100%] flex flex-col items-center justify-center gap-[1em] text-xl" ref={items}>
           <a onClick={scrollToSkills} className="cursor-pointer">Skills</a>
           <a onClick={scrollToProjects} className="cursor-pointer">Projects</a>

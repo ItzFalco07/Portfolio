@@ -7,8 +7,9 @@ body {
 	background-color: #050816;
 }
 
-.loader {
-	transition:  0.3s !important;
+
+#loader {
+	transition: all 0.5s ease !important;
 }
 .form {
 	scale: 0.86;
@@ -16,7 +17,8 @@ body {
 #hero {
 	background-image: url('./assets/herobg.png') !important;
 	background-size:cover !important;
-	overflow: visible !important; 
+	overflow: hidden !important; 
+	overflow-y: hidden !important; 
 	z-index: 100 !important;
 }
 body, #root {
@@ -33,7 +35,7 @@ body, #root {
 }
 
 #hi {
-    overflow: visible !important; 
+    overflow-y: hidden !important; 
 }
 
 
@@ -110,11 +112,11 @@ body, #root {
 		#contact {
 		display: flex !important;
 		flex-direction: column !important;
-		height: 200vh !important;
+		height: 160vh !important;
 		position: relative !important;
   /* 		REVERS ITEMS INSIDE #CONTACT */
 	}
-	#form {
+	.form {
 		position: absolute !important;
 		width: 80% !important;
 		left: 50% !important;
@@ -180,7 +182,7 @@ body, #root {
 
 /* Hamburger */
 @media (max-width: 660px) {
-	#form{
+	.form{
 		width: 100% !important;
 	}
 
