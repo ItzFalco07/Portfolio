@@ -69,7 +69,7 @@ const Home = () => {
   return (
     <>
       <Loader loaderRef={loaderRef} />
-      <div id="hero" className=" w-full h-screen text-white relative z-[10]">
+      <div id="hero" className="overflow-x-hidden w-full h-screen text-white relative z-[10]">
         <div className="item-container absolute w-[70%] h-screen bg-[#0d102b] z-[20] right-[-100%] flex flex-col items-center justify-center gap-[1em] text-xl" ref={items}>
           <a onClick={scrollToSkills} className="cursor-pointer">Skills</a>
           <a onClick={scrollToProjects} className="cursor-pointer">Projects</a>
@@ -112,7 +112,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div id="hi" className="absolute bottom-[-3em] w-full h-[60vh] z-[10]">
+        <div id="hi" className="absolute overflow-hidden bottom-[-3em] w-full h-[60vh] z-[10]">
           <DesktopCanvas setLoading={setLoading} />
         </div>
       </div>

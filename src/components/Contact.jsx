@@ -68,9 +68,9 @@ const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const SERVICE_ID = import.meta.env.VITE_PUBLIC_SERVICE_ID
-  const TEMPLATE_ID = import.meta.env.VITE_PUBLIC_TEMPLATE_ID
-  const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_PUBLIC_KEY
+  const SERVICE_ID = import.meta.env.VITE_SERVICE_ID
+  const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID
+  const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY
   const [seconds, setSeconds] = useState(0)
   const [isTimerRunning, setIsTimerRunning] = useState(false)
 
