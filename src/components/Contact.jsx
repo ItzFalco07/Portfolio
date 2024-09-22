@@ -83,10 +83,10 @@ const Contact = () => {
 
   useEffect(() => {
     if (formInView) {
-      formControls.start({ x: 0, opacity: 1, transition: { duration: 0.5 } })
+      formControls.start({ x: 0, opacity: 1, transition: { duration: 1 } })
     }
     if (earthInView) {
-      earthControls.start({ x: 0, opacity: 1, transition: { duration: 0.5 } })
+      earthControls.start({ x: 0, opacity: 1, transition: { duration: 1 } })
     }
   }, [formInView, earthInView, formControls, earthControls])
 
@@ -151,7 +151,7 @@ const Contact = () => {
         <StarBackground />
         <motion.div
           ref={formRef}
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ x: -200, opacity: 0 }}
           animate={formControls}
           className="form bg-[#090325] py-[3em] my-auto px-[3em] w-[fit-content]"
         >
@@ -215,7 +215,7 @@ const Contact = () => {
         </motion.div>
         <motion.div
           ref={earthRef}
-          initial={{ x: 100, opacity: 0 }}
+          initial={{ x: 200, opacity: 0 }}
           animate={earthControls}
           className="earth w-[50%] mx-auto h-[100vh]"
         >

@@ -9,7 +9,7 @@ body {
 
 
 #loader {
-	transition: all 0.5s ease !important;
+	transition: all 1s ease !important;
 }
 .form {
 	scale: 0.86;
@@ -88,11 +88,23 @@ body, #root {
 	word-spacing: 1px;
 	font-size: 3.3em;
 }
-
+.glow {
+  color: #925eff !important; /* Text color */
+  text-shadow: 0 0 70px #925eff !important; 
+}
 #special {
 	color: #925eff
 }
-
+#background-glow {
+	width: 500px !important;
+	height: 200px !important;
+	border-radius:  40%;
+	position: absolute !important;
+	margin: auto !important;
+	filter: blur(80px); /* Adjust blur level */
+	background-color: #925eff !important; /* Semi-transparent background */
+	opacity: 0.2;
+}
 /* laptops (1024px) */
 @media (max-width: 1024px) {
 	nav {
@@ -106,7 +118,6 @@ body, #root {
 		margin-top: 2em;
 	}
 }
-
 /* tablets */
 @media (max-width: 768px) {
 		#contact {
@@ -177,9 +188,6 @@ body, #root {
 	border-top: 1px solid #626174;
 }
 
-
-
-
 /* Hamburger */
 @media (max-width: 660px) {
 	.form{
@@ -219,9 +227,17 @@ body, #root {
 
 /* Mobile L */
 @media (max-width: 440px) {
+	#background-glow {
+		width: 300px !important;
+		height: 100px !important;
+  }
 	#hi {
 		height: 40vh;
 		bottom: 2em;
+	}
+
+	#loader_text {
+		font-size: 1.5em !important;
 	}
 
 	.project {

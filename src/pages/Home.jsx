@@ -61,6 +61,8 @@ const Home = () => {
     if(loaderRef.current) {
       if(!Loading) {
         loaderRef.current.style.top = '-100vh'
+        loaderRef.current.style.opacity = '0'
+
         document.body.style.overflow = 'auto'
       }
     }
