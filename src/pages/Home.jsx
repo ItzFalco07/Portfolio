@@ -60,7 +60,7 @@ const Home = () => {
     console.log(Loading)
     if(loaderRef.current) {
       if(!Loading) {
-        loaderRef.current.style.top = '-100%'
+        loaderRef.current.style.top = '-100vh'
         document.body.style.overflow = 'auto'
       }
     }
