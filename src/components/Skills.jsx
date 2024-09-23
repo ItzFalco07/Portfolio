@@ -100,7 +100,7 @@ const Skills = ({skillsRef}) => {
 
         <div className="display-skills mt-[2em] gap-[1em]">
           {skills.map((skill, index) => (
-            <div className="flex gap-[1em] mb-[1em]" key={index} ref={(el) => skillRefs.current[index] = el}>
+            <div id='skill'  className="flex gap-[1em] mb-[1em]" key={index} ref={(el) => skillRefs.current[index] = el}>
               <img src={skill.img} alt="Skill" />
               <div className="relative percent w-[70%] h-[6px]">
                 <p className={`w-fit-content `} style={{ paddingLeft: `${Number(skill.percent) - 5}%` }}>{`${skill.percent}%`}</p>

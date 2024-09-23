@@ -49,6 +49,10 @@ body, #root {
 	transition: 0.4s;
 }
 
+#skill {
+	transition: 0.3s !important;
+}
+
 
 
 .Link:after {
