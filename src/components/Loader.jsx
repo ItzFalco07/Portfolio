@@ -1,8 +1,10 @@
-import React from 'react';
+import {useEffect} from 'react';
 
 const Loader = ({loaderRef}) => {
-document.body.style.overflow = 'hidden';
 
+  useEffect(()=> {
+    document.body.style.overflow = 'hidden';
+  }, [])
   return (
     <>
     

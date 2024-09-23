@@ -24,9 +24,11 @@ const Home = () => {
     if(ToggleMenu) {
       setToggleMenu(false);
       items.current.style.right = '-100%';
+      document.body.style.overflow = 'auto';
     } else {
       setToggleMenu(true);
       items.current.style.right = '0';
+      document.body.style.overflow = 'hidden';
     }
 
     // Fade out current icon
@@ -47,6 +49,7 @@ const Home = () => {
     setSwitch(false);
     setToggleMenu(false)
     items.current.style.right = '-100%';
+    document.body.style.overflow = 'auto';
     skillsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
   const scrollToProjects = () => {
@@ -54,6 +57,7 @@ const Home = () => {
     setSwitch(false);
     setToggleMenu(false)
     items.current.style.right = '-100%';
+    document.body.style.overflow = 'auto';
     projectsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
   useEffect(()=> {
@@ -61,8 +65,6 @@ const Home = () => {
     if(loaderRef.current) {
       if(!Loading) {
         loaderRef.current.style.top = '-100vh'
-        loaderRef.current.style.opacity = '0'
-
         document.body.style.overflow = 'auto'
       }
     }
