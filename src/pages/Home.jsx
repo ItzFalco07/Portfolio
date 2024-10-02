@@ -9,6 +9,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Loader from '../components/Loader';
+import {Helmet} from 'react-helmet'
 
 const Home = () => {
   const [Loading, setLoading] = useState(true);
@@ -72,6 +73,11 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Your Name - Portfolio</title>
+        <meta name="description" content="Portfolio showcasing my web development projects." />
+        <meta name="keywords" content="web development, React, JavaScript, portfolio, MERN stack, web developer" />
+      </Helmet>
       <Loader loaderRef={loaderRef} />
       <div id="hero" className="overflow-x-hidden w-full h-screen text-white relative z-[10]">
         <div className="item-container absolute w-[70%] h-screen bg-[#0d102b] z-[20] right-[-100%] flex flex-col items-center justify-center gap-[1em] text-xl" ref={items}>
@@ -81,7 +87,7 @@ const Home = () => {
         </div>
         <div className="w-full h-[50vh] nav">
           <nav className="w-full h-[70px] px-[14em] flex justify-between items-center">
-            <img src={Logo} className="logo w-[15em]" alt="Logo"></img>
+            <img src={Logo} alt="Portfolio logo" className="logo w-[15em]" alt="Logo"></img>
             <div className="links-con flex items-center">
               <div className="links text mx-[2em] h-full gap-[2em] z-[21] w-[34%] flex justify-between items-center">
                 <Link onClick={scrollToSkills} className="Link relative font-medium tracking-widest hover:text-[#925eff]">Skills</Link>
