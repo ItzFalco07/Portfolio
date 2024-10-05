@@ -87,13 +87,15 @@ const Home = () => {
         </div>
         <div className="w-full h-[50vh] nav">
           <nav className="w-full h-[70px] px-[14em] flex justify-between items-center">
-            <img src={Logo} alt="Portfolio logo" className="logo w-[15em]" alt="Logo"></img>
+            <img src={Logo} alt="Portfolio logo" className="logo w-[15em]"></img>
             <div className="links-con flex items-center">
               <div className="links text mx-[2em] h-full gap-[2em] z-[21] w-[34%] flex justify-between items-center">
                 <Link onClick={scrollToSkills} className="Link relative font-medium tracking-widest hover:text-[#925eff]">Skills</Link>
                 <Link onClick={scrollToProjects} className="Link relative font-medium tracking-widest hover:text-[#925eff]">Projects</Link>
               </div>
-              <button href="https://www.upwork.com/freelancers/~0184cf5697571fafe6" className="z-[21] btn font-medium ml-[2em] w-[8em] rounded-[6px] px-[20px] py-[8px] break-keep font-bold">Hire Me</button>
+              <a href="https://www.upwork.com/freelancers/~0184cf5697571fafe6">
+              <button className="z-[21] btn font-medium ml-[2em] w-[8em] rounded-[6px] px-[20px] py-[8px] break-keep font-bold">Hire Me</button>
+              </a>
             </div>
             <img
               src={Switch ? close : menu}
